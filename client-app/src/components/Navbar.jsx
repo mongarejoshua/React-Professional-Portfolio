@@ -17,8 +17,18 @@ function Navbar() {
           className="collapse navbar-collapse justify-content-end"
           id="navbarNav"
         >
-          <ul className="navbar-nav align-items-center gap-3">
-            {["Projects", "Services", "Skills", "About", "Blog"].map((item) => (
+          <ul className="navbar-nav align-items-center gap-2">
+            {[
+              "HOME",
+              "PROJECTS",
+              "SERVICES",
+              "SKILLS",
+              "GITHUB",
+              "REVIEWS",
+              "ABOUT",
+              "BLOG",
+              "CONTACT",
+            ].map((item) => (
               <li key={item} className="nav-item">
                 <a
                   className="nav-link text-dark fw-medium"
@@ -28,11 +38,6 @@ function Navbar() {
                 </a>
               </li>
             ))}
-            <li className="nav-item">
-              <a href="#contact" className="btn btn-brand">
-                Contact Me
-              </a>
-            </li>
           </ul>
         </div>
       </div>
@@ -40,4 +45,4 @@ function Navbar() {
   );
 }
 
-export default Navbar
+export default Navbar;

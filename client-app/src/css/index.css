@@ -1,4 +1,71 @@
+/* Alan Sans */
+@font-face {
+  font-family: 'Alan Sans';
+  src: url('../assets/fonts/Alan_Sans/static/AlanSans-SemiBold.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* === Fira Sans === */
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../assets/fonts/Fira_Sans/FiraSans-SemiBold.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  font-family: "Alan Sans";
+}
+
 :root {
+  --brand-primary: #FF6B35; /* Vivid Orange */
+  --brand-secondary: #0B1B32; /* Navy Blue */
+  --brand-light: #F8F9FA;
+  --brand-text: #333333;
+}
+
+/* Utility Classes */
+.text-brand-orange {
+  color: var(--brand-primary) !important;
+}
+
+.text-brand-navy {
+  color: var(--brand-secondary) !important;
+}
+
+.bg-brand-navy {
+  background-color: var(--brand-secondary) !important;
+  color: white;
+}
+
+.bg-brand-orange {
+  background-color: var(--brand-primary) !important;
+  color: white;
+}
+
+/* Custom Buttons */
+.btn-brand {
+  background-color: var(--brand-primary);
+  color: white;
+  border-radius: 50px;
+  padding: 10px 25px;
+  border: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn-brand:hover {
+  background-color: #e55a2b;
+  color: white;
+  transform: translateY(-2px);
+}
+
+
+
+/* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -65,4 +132,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
