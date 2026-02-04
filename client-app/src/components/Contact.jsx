@@ -6,8 +6,11 @@ export default function Contact() {
           <div className="col-lg-8">
             <div className="text-center mb-5">
               <h6 className="text-brand-orange text-uppercase fw-bold">
-                — Get In Touch
+                - Get In Touch -
               </h6>
+              <div class="alert alert-danger z-1" role="alert">
+                Note: This form is not yet working. Updates still in progress. You Can reach me using other methods
+              </div>
               <h2 className="text-brand-navy fw-bold">
                 Let's Discuss Your Project
               </h2>
@@ -23,12 +26,12 @@ export default function Contact() {
                     {
                       label: "Your Name",
                       type: "text",
-                      placeholder: "John Doe",
+                      placeholder: "Joshua Mongare",
                     },
                     {
                       label: "Your Email",
                       type: "email",
-                      placeholder: "name@example.com",
+                      placeholder: "nameexample@gmail.com",
                     },
                     {
                       label: "Subject",
@@ -65,7 +68,7 @@ export default function Contact() {
                   <div className="col-12 text-center mt-4">
                     <button
                       type="submit"
-                      className="btn btn-brand w-100 py-3 rounded-pill shadow"
+                      className="btn bg-brand-navy text-white w-50 py-3 rounded-4 shadow"
                     >
                       Send Message
                     </button>

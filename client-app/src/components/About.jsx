@@ -2,18 +2,18 @@ export default function About() {
   return (
     <section id="about" className="bg-white">
       <div className="container">
-        <div className="row g-0 align-items-center rounded-4 overflow-hidden shadow-sm">
+        <div className="row g-0 align-items-center rounded-end-4 overflow-hidden shadow-sm">
           <div className="col-lg-6">
             <img
               src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=1000"
               className="w-100 h-100"
-              style={{ minHeight: "400px", objectFit: "cover" }}
+              style={{ minHeight: "528px", objectFit: "cover" }}
               alt="About Image"
             />
           </div>
-          <div className="col-lg-6 bg-brand-navy text-white p-5">
+          <div className="col-lg-6 bg-brand-navy text-white p-5"> 
             <h6 className="text-brand-orange text-uppercase fw-bold mb-3">
-              — About Me
+              - About Me -
             </h6>
             <h3 className="fw-bold mb-4">
               Bridging Engineering & Digital Application

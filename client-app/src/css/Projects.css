@@ -1,0 +1,21 @@
+
+/* Card hover (optional polish) */
+.project-card {
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+}
+
+/* Brand helpers */
+.text-brand-secondary {
+    color: var(--brand-secondary);
+}
+
+.section-badge {
+    background-color: rgba(255, 107, 53, 0.15);
+    color: var(--brand-primary);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}

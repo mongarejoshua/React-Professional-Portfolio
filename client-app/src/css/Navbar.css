@@ -1,0 +1,40 @@
+:root {
+    --brand-primary: #FF6B35;
+    --brand-secondary: #0B1B32;
+    --brand-light: #F8F9FA;
+}
+
+/* Background only */
+.navbar-custom {
+    background-color: var(--brand-secondary);
+}
+
+/* Brand accent */
+.brand-dot {
+    color: var(--brand-primary);
+}
+
+/* Links */
+.nav-link-custom {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--brand-light) !important;
+    position: relative;
+}
+
+/* Simple underline hover */
+.nav-link-custom::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: var(--brand-primary);
+    transition: width 0.25s ease;
+}
+
+.nav-link-custom:hover::after {
+    width: 100%;
+}

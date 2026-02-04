@@ -1,0 +1,53 @@
+
+/* Section */
+.hero-section {
+    padding-bottom: 100px;
+    background: var(--brand-secondary);
+}
+/* Accent */
+.text-brand-primary {
+    color: var(--brand-primary);
+}
+
+/* Image wrapper */
+.hero-image-wrapper {
+    max-width: 320px;
+    border-radius: 50%;
+    padding: 6px;
+    background: linear-gradient(135deg,
+            var(--brand-primary),
+            transparent);
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Image */
+.hero-image {
+    border-radius: 50%;
+    background-color: var(--brand-secondary);
+}
+
+/* Button */
+.btn-brand-primary {
+    background-color: var(--brand-secondary);
+    color: var(--brand-light);
+    border: none;
+}
+
+.btn-brand-primary:hover {
+    background-color: #e85c2d;
+}
+
+/* Subtle animation */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}

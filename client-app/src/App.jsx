@@ -2,8 +2,8 @@ import "./css/App.css";
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import Overlap from "./components/Overlap";
 import Projects from "./components/Projects";
-import Services from "./components/Services";
 import Skills from "./components/Skills";
 import Testimonials from "./components/Clients";
 import Blog from "./components/Blog";
@@ -17,12 +17,12 @@ function App() {
     <>
       <Navbar />
       <Hero />
+      <Overlap />
       <Projects />
-      <Services />
       <Skills />
       <Testimonials />
-      <Blog />
       <About />
+      <Blog />
       <Contact />
       <Footer />
     </>

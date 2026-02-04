@@ -7,27 +7,17 @@
   font-display: swap;
 }
 
-/* === Fira Sans === */
-@font-face {
-  font-family: 'Fira Sans';
-  src: url('../assets/fonts/Fira_Sans/FiraSans-SemiBold.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
 * {
   font-family: "Alan Sans";
 }
+
 
 :root {
   --brand-primary: #FF6B35; /* Vivid Orange */
   --brand-secondary: #0B1B32; /* Navy Blue */
   --brand-light: #F8F9FA;
-  --brand-text: #333333;
 }
 
-/* Utility Classes */
 .text-brand-orange {
   color: var(--brand-primary) !important;
 }

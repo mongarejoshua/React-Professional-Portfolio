@@ -24,12 +24,12 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="bg-white">
+    <section id="testimonials" className="bg-white py-3">
       <div className="container">
         {/* Section Header */}
         <div className="text-center mb-5">
           <h6 className="text-brand-orange text-uppercase fw-bold">
-            — Client Feedback
+            - Client Feedback -
           </h6>
           <h2 className="text-brand-navy fw-bold display-6">
             Trusted by Clients

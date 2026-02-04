@@ -1,40 +1,48 @@
-function Navbar() {
+import "../css/Navbar.css";
+
+const navLinks = [
+  "HOME",
+  "PROJECTS",
+  "SKILLS",
+  "GITHUB",
+  "REVIEWS",
+  "ABOUT",
+  "BLOG",
+  "CONTACT",
+];
+
+export default function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg fixed-top bg-white shadow-sm py-3">
+    <nav className="navbar navbar-expand-lg navbar-custom navbar-dark sticky-top">
       <div className="container">
-        <a className="navbar-brand fw-bold fs-4 text-brand-navy" href="#">
-          Mongare<span className="text-brand-orange"> Joshua</span>
+        {/* Logo */}
+        <a className="navbar-brand navbar-logo text-brand-orange" href="#home">
+          Mongare<span className="text-light">Joshua</span>
         </a>
+
+        {/* Mobile toggle */}
         <button
-          className="navbar-toggler"
+          className="navbar-toggler custom-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
+          data-bs-target="#mainNavbar"
+          aria-controls="mainNavbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div
-          className="collapse navbar-collapse justify-content-end"
-          id="navbarNav"
-        >
-          <ul className="navbar-nav align-items-center gap-2">
-            {[
-              "HOME",
-              "PROJECTS",
-              "SERVICES",
-              "SKILLS",
-              "GITHUB",
-              "REVIEWS",
-              "ABOUT",
-              "BLOG",
-              "CONTACT",
-            ].map((item) => (
-              <li key={item} className="nav-item">
+
+        {/* Links */}
+        <div className="collapse navbar-collapse" id="mainNavbar">
+          <ul className="navbar-nav ms-auto mb-1 mb-lg-0 gap-lg-1">
+            {navLinks.map((link) => (
+              <li className="nav-item" key={link}>
                 <a
-                  className="nav-link text-dark fw-medium"
-                  href={`#${item.toLowerCase()}`}
+                  className="nav-link nav-link-custom"
+                  href={`#${link.toLowerCase()}`}
                 >
-                  {item}
+                  {link}
                 </a>
               </li>
             ))}
@@ -44,5 +52,3 @@ function Navbar() {
     </nav>
   );
 }
-
-export default Navbar;

@@ -5,7 +5,7 @@ export default function Footer() {
         <div className="row g-4 mb-5">
           <div className="col-md-4">
             <h4 className="fw-bold mb-3">
-              Mongare<span className="text-brand-orange"> Joshua</span>
+              Mongare<span className="text-brand-orange">Joshua</span>
             </h4>
             <p className="text-white-50 small">
               Professional Electrical and Telecommunication Engineering services
@@ -46,14 +46,14 @@ export default function Footer() {
                 <i className="bi bi-geo-alt me-2"></i> Nairobi, Kenya
               </li>
               <li className="mb-2">
-                <i className="bi bi-envelope me-2"></i> [Email Protected]
+                <i className="bi bi-envelope me-2"></i> mongarejoshua254@gmail.com
               </li>
             </ul>
           </div>
         </div>
         <div className="border-top border-secondary pt-3 text-center">
           <p className="small text-white-50 mb-0">
-            &copy; 2026 Veblen Konosi. All Rights Reserved. Design & Developed
+            &copy; 2026 Mongare Joshua. All Rights Reserved. Design & Developed
             by
             <a
               href="https://yourportfolio.com"

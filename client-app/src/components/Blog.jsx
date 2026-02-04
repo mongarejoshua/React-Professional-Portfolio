@@ -18,11 +18,11 @@ const posts = [
 
 export default function Blog() {
   return (
-    <section id="blog" className="bg-light">
+    <section id="blog" className="bg-light py-3 ">
       <div className="container">
         <div className="text-center mb-5">
           <h6 className="text-brand-orange text-uppercase fw-bold">
-            — Insights
+            - Insights -
           </h6>
           <h2 className="text-brand-navy fw-bold display-6">
             Latest Blog Posts

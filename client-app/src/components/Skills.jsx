@@ -1,8 +1,14 @@
 const skills = [
-  { icon: "bi-motherboard", name: "KiCad / FreeCAD", percent: 90 },
-  { icon: "bi-code-square", name: "Python / C++", percent: 85 },
-  { icon: "bi-broadcast", name: "GNU Radio / RF", percent: 80 },
-  { icon: "bi-browser-chrome", name: "Web (HTML/CSS/JS)", percent: 95 },
+  { icon: "bi-motherboard", name: "KiCad & TinkerCAD", percent: 75 },
+  { icon: "bi-code-square", name: "Python & C++", percent: 60 },
+  { icon: "bi-broadcast", name: "GNU Radio / RF", percent: 24 },
+  {
+    icon: "bi-browser-chrome",
+    name: "HTML,CSS,JS,Bootstrap",
+    percent: 95,
+  },
+  { icon: "bi-building", name: "AutoCAD", percent: 70 },
+  { icon: "bi bi-filetype-jsx", name: "React", percent: 45 },
 ];
 
 export default function Skills() {
@@ -10,14 +16,14 @@ export default function Skills() {
     <section id="skills" className="bg-white">
       <div className="container">
         <div className="row align-items-center">
-          <div className="col-lg-5 mb-4 mb-lg-0">
+          <div className="col-lg-5 bg-brand-navy text-white p-5 mb-4 mb-lg-0 rounded-start-4">
             <h6 className="text-brand-orange text-uppercase fw-bold">
-              — Technical Proficiency
+              - Technical Proficiency -
             </h6>
-            <h2 className="text-brand-navy fw-bold display-6 mb-4">
+            <h2 className="text-white fw-bold display-6 mb-4">
               Tools & Expertise
             </h2>
-            <p className="text-muted">
+            <p className="text-white-50">
               My background allows me to bridge the gap between underlying
               engineering principles and practical digital application. I use
               open-source and industry-standard tools.
