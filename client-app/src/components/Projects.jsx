@@ -6,7 +6,7 @@ const projects = [
     title: "LED Blinker Circuit",
     description:
       "A timing-based LED circuit that turns LEDs ON and OFF using resistors, capacitors, and a 555 timer.",
-    img: "/images/project-demos/project1a.png",
+    img: "../assets/project-demos/project1a.png",
 
     meta: {
       difficulty: "Beginner",
@@ -260,7 +260,7 @@ export default function Projects() {
                     alt={project.title}
                   />
 
-                  <div className="card-body d-flex flex-column">
+                  <div className="card-body d-flex flex-column width-50">
                     <span className="badge bg-brand-orange mb-3">
                       {project.category}
                     </span>

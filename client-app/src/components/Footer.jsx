@@ -15,7 +15,7 @@ export default function Footer() {
           <div className="col-md-2 offset-md-1">
             <h6 className="fw-bold mb-3 text-brand-orange">Links</h6>
             <ul className="list-unstyled small text-white-50">
-              {["Home", "Projects", "Services"].map((link) => (
+              {["Home", "Projects", "Skills", "GitHub"].map((link) => (
                 <li key={link} className="mb-2">
                   <a
                     href={`#${link.toLowerCase()}`}
@@ -30,7 +30,7 @@ export default function Footer() {
           <div className="col-md-2">
             <h6 className="fw-bold mb-3 text-brand-orange">Services</h6>
             <ul className="list-unstyled small text-white-50">
-              {["Electrical Wiring", "Network Design", "Maintenance"].map(
+              {["Electrical Installation", "Network Design", "Maintenance"].map(
                 (service) => (
                   <li key={service} className="mb-2">
                     {service}
