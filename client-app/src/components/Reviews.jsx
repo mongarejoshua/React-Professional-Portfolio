@@ -1,4 +1,4 @@
-const testimonials = [
+const reviews = [
   {
     name: "James Mwangi",
     role: "Network Technician",
@@ -22,9 +22,9 @@ const testimonials = [
   },
 ];
 
-export default function Testimonials() {
+export default function Reviews() {
   return (
-    <section id="testimonials" className="bg-white py-3">
+    <section id="reviews" className="bg-white py-3">
       <div className="container">
         {/* Section Header */}
         <div className="text-center mb-5">
@@ -42,7 +42,7 @@ export default function Testimonials() {
 
         {/* Testimonials */}
         <div className="row g-4">
-          {testimonials.map(({ name, role, feedback, rating }) => (
+          {reviews.map(({ name, role, feedback, rating }) => (
             <div className="col-md-6 col-lg-4" key={name}>
               <div className="card border-0 shadow-sm h-100 rounded-4">
                 <div className="card-body p-4">

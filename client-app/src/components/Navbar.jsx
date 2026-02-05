@@ -6,14 +6,14 @@ const navLinks = [
   "SKILLS",
   "GITHUB",
   "REVIEWS",
-  "ABOUT",
   "BLOG",
+  "ABOUT",
   "CONTACT",
 ];
 
 export default function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-custom navbar-dark sticky-top">
+    <nav className="navbar navbar-expand-lg navbar-custom navbar-light sticky-top">
       <div className="container">
         {/* Logo */}
         <a className="navbar-brand navbar-logo text-brand-orange" href="#home">
