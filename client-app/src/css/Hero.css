@@ -3,6 +3,7 @@
 .hero-section {
     padding-bottom: 100px;
     background: var(--brand-secondary);
+    scroll-margin-top: 50px;
 }
 /* Accent */
 .text-brand-primary {

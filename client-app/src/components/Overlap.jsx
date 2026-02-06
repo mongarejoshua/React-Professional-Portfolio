@@ -14,7 +14,7 @@ const Overlap = () => {
         <div className="row g-4 justify-content-center">
           {services.map((service, index) => (
             <div className="col-12 col-md-6 col-lg-3" key={index}>
-              <div className="card h-100 shadow-sm border-0 overlap-card">
+              <div className="card h-100 shadow-lg overlap-card">
                 <div className="card-body d-flex align-items-center gap-2">
                   <i
                     className={`bi ${service.icon} fs-4 text-brand-orange`}

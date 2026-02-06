@@ -1,4 +1,5 @@
 import "../css/Navbar.css";
+import { Collapse } from "bootstrap";
 
 const navLinks = [
   "HOME",
@@ -12,24 +13,28 @@ const navLinks = [
 ];
 
 export default function Navbar() {
-  // Split the links into two groups
-  const leftLinks = navLinks.slice(0, 4); // Home, Projects, Skills, Github
-  const rightLinks = navLinks.slice(4); // Reviews, Blog, About, Contact
+  const leftLinks = navLinks.slice(0, 4);
+  const rightLinks = navLinks.slice(4);
+
+  // 🔹 Close navbar on link click (mobile)
+  const handleNavClick = () => {
+    const navbar = document.getElementById("mainNavbar");
+    if (navbar && navbar.classList.contains("show")) {
+      Collapse.getOrCreateInstance(navbar).hide();
+    }
+  };
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
       <div className="container">
-        {/* --- MOBILE LOGO --- 
-            Visible only on small screens (d-lg-none). 
-            Placed first so it appears at the start. */}
         <a
           className="navbar-brand navbar-logo text-brand-orange d-lg-none"
           href="#home"
+          onClick={handleNavClick}
         >
           Mongare<span className="text-light">Joshua</span>
         </a>
 
-        {/* Mobile toggle button */}
         <button
           className="navbar-toggler custom-toggler"
           type="button"
@@ -43,13 +48,19 @@ export default function Navbar() {
         </button>
 
         <div className="collapse navbar-collapse" id="mainNavbar">
-          {/* Left Links */}
           <ul className="navbar-nav mb-2 mb-lg-0 gap-lg-1">
             {leftLinks.map((link) => (
               <li className="nav-item" key={link}>
                 <a
                   className="nav-link nav-link-custom"
-                  href={`#${link.toLowerCase()}`}
+                  href={
+                    link === "GITHUB"
+                      ? "https://github.com/mongarejoshua?tab=repositories"
+                      : `#${link.toLowerCase()}`
+                  }
+                  target={link === "GITHUB" ? "_blank" : undefined}
+                  rel={link === "GITHUB" ? "noopener noreferrer" : undefined}
+                  onClick={handleNavClick}
                 >
                   {link}
                 </a>
@@ -57,9 +68,6 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* --- DESKTOP LOGO --- 
-              Visible only on large screens (d-none d-lg-block). 
-              mx-auto centers it between the two lists. */}
           <a
             className="navbar-brand navbar-logo text-brand-orange d-none d-lg-block mx-auto"
             href="#home"
@@ -67,13 +75,13 @@ export default function Navbar() {
             Mongare<span className="text-light">Joshua</span>
           </a>
 
-          {/* Right Links */}
           <ul className="navbar-nav mb-2 mb-lg-0 gap-lg-1">
             {rightLinks.map((link) => (
               <li className="nav-item" key={link}>
                 <a
                   className="nav-link nav-link-custom"
                   href={`#${link.toLowerCase()}`}
+                  onClick={handleNavClick}
                 >
                   {link}
                 </a>

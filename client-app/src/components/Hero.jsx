@@ -3,7 +3,7 @@ import profileImg from "../assets/images/profile.png";
 
 export default function Hero() {
   return (
-    <section id="home" className="hero-section d-flex align-items-center py-5">
+    <section id="home" className="hero-section d-flex align-items-center pt-5">
       <div className="container">
         <div className="row align-items-center gy-5">
           {/* Text content */}

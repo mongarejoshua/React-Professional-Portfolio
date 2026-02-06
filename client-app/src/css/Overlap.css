@@ -1,9 +1,7 @@
 .overlap-section {
-    margin-top: -60px;
-    /* pulls cards into the hero */
+    margin-top: -60px; /* pulls cards into the hero */
     z-index: 10;
 }
-
 .overlap-card {
-    border-radius: 10px;
+    border-radius: 0 10px 0 10px;
 }

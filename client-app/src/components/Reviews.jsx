@@ -1,3 +1,5 @@
+import "../css/Reviews.css"
+
 const reviews = [
   {
     name: "James Mwangi",
@@ -24,7 +26,7 @@ const reviews = [
 
 export default function Reviews() {
   return (
-    <section id="reviews" className="bg-white py-3">
+    <section id="reviews" className="bg-white pt-5">
       <div className="container">
         {/* Section Header */}
         <div className="text-center mb-5">

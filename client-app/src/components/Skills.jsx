@@ -1,3 +1,5 @@
+import "../css/Skills.css"
+
 const skills = [
   { icon: "bi-motherboard", name: "KiCad & TinkerCAD", percent: 75 },
   { icon: "bi-code-square", name: "Python & C++", percent: 60 },
@@ -13,7 +15,7 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="bg-white">
+    <section id="skills" className="bg-white pt-5">
       <div className="container">
         <div className="row align-items-center">
           <div className="col-lg-5 bg-brand-navy text-white p-5 mb-4 mb-lg-0 rounded-start-4">

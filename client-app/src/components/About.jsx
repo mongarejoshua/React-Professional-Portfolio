@@ -1,6 +1,8 @@
+import "../css/About.css"
+
 export default function About() {
   return (
-    <section id="about" className="bg-white">
+    <section id="about" className="bg-white pt-5">
       <div className="container">
         <div className="row g-0 align-items-center rounded-end-4 overflow-hidden shadow-sm">
           <div className="col-lg-6">

@@ -1,6 +1,8 @@
+import "../css/Contact.css"
+
 export default function Contact() {
   return (
-    <section id="contact" className="bg-light">
+    <section id="contact" className="bg-light pt-5 mb-3">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-8">
@@ -21,17 +23,17 @@ export default function Contact() {
 
             <div className="card border-0 shadow p-4 p-md-5 rounded-4">
               <form>
-                <div className="row g-3">
+                <div className="row g-2">
                   {[
                     {
                       label: "Your Name",
                       type: "text",
-                      placeholder: "Joshua Mongare",
+                      placeholder: "Enter your name",
                     },
                     {
                       label: "Your Email",
                       type: "email",
-                      placeholder: "nameexample@gmail.com",
+                      placeholder: "example@gmail.com",
                     },
                     {
                       label: "Subject",

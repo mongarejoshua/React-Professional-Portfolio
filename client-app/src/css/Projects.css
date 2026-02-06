@@ -1,7 +1,10 @@
-
+#projects {
+    scroll-margin-top: 50px;
+}
 /* Card hover (optional polish) */
 .project-card {
     transition: transform 0.3s ease;
+    
 }
 
 .project-card:hover {
@@ -18,4 +21,42 @@
     color: var(--brand-primary);
     font-weight: 600;
     letter-spacing: 0.1em;
+}
+
+/* ===================== PAGINATION THEME OVERRIDE ===================== */
+
+.pagination .page-link {
+    color: white !important;
+    background-color: var(--brand-secondary);
+    border: 1px solid var(--brand-secondary);
+    transition: all 0.25s ease;
+}
+
+/* Hover */
+.pagination .page-link:hover {
+    background-color: var(--brand-primary);
+    border-color: var(--brand-primary);
+    color: white !important;
+}
+
+/* Active page */
+.pagination .page-item.active .page-link {
+    background-color: var(--brand-primary) !important;
+    border-color: var(--brand-primary) !important;
+    color: white !important;
+    font-weight: 600;
+}
+
+/* Disabled */
+.pagination .page-item.disabled .page-link {
+    background-color: #d1d5db !important;
+    /* soft gray */
+    border-color: #d1d5db !important;
+    color: #6b7280 !important;
+    cursor: not-allowed;
+}
+
+/* Remove Bootstrap focus ring */
+.pagination .page-link:focus {
+    box-shadow: none;
 }

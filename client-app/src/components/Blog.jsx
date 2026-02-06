@@ -1,3 +1,5 @@
+import "../css/Blog.css"
+
 const posts = [
   {
     date: "Nov 09, 2025",
@@ -18,7 +20,7 @@ const posts = [
 
 export default function Blog() {
   return (
-    <section id="blog" className="bg-light py-3 ">
+    <section id="blog" className="bg-light pt-5">
       <div className="container">
         <div className="text-center mb-5">
           <h6 className="text-brand-orange text-uppercase fw-bold">
