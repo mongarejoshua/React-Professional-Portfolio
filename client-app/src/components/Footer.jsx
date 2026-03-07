@@ -30,7 +30,7 @@ export default function Footer() {
           <div className="col-md-2">
             <h6 className="fw-bold mb-3 text-brand-orange">Services</h6>
             <ul className="list-unstyled small text-white-50">
-              {["Electrical Installation", "Network Design", "Maintenance"].map(
+              {["Electrical Installation", "Network Design", "Testing & Maintenance", "Control Systems"].map(
                 (service) => (
                   <li key={service} className="mb-2">
                     {service}
@@ -45,9 +45,7 @@ export default function Footer() {
               <li className="mb-2">
                 <i className="bi bi-geo-alt me-2"></i> Nairobi, Kenya
               </li>
-              <li className="mb-2">
-                <i className="bi bi-envelope me-2"></i> mongarejoshua254@gmail.com
-              </li>
+              
             </ul>
           </div>
         </div>

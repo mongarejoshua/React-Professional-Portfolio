@@ -3,14 +3,9 @@ import "../css/Skills.css"
 const skills = [
   { icon: "bi-motherboard", name: "KiCad & TinkerCAD", percent: 75 },
   { icon: "bi-code-square", name: "Python & C++", percent: 60 },
-  { icon: "bi-broadcast", name: "GNU Radio / RF", percent: 24 },
-  {
-    icon: "bi-browser-chrome",
-    name: "HTML,CSS,JS,Bootstrap",
-    percent: 95,
-  },
   { icon: "bi-building", name: "AutoCAD", percent: 70 },
   { icon: "bi bi-filetype-jsx", name: "React", percent: 45 },
+  { icon: "bi bi-microsoft", name: "Windows Installation", percent: 85 },
 ];
 
 export default function Skills() {
@@ -22,7 +17,7 @@ export default function Skills() {
             <h6 className="text-brand-orange text-uppercase fw-bold">
               - Technical Proficiency -
             </h6>
-            <h2 className="text-white fw-bold display-6 mb-4">
+            <h2 className="text-white fw-bold display-6 mb-4"> 
               Tools & Expertise
             </h2>
             <p className="text-white-50">

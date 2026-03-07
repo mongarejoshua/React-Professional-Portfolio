@@ -209,6 +209,7 @@ const projects = [
       ],
     },
   },
+  
 ];
 
 /* ===================== PAGINATION COMPONENT (FIX) ===================== */

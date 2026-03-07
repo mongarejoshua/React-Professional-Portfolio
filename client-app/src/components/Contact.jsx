@@ -1,78 +1,183 @@
-import "../css/Contact.css"
+import { useState } from "react";
+import "../css/Contact.css";
 
 export default function Contact() {
+  const [loading, setLoading] = useState(false);
+  const [modal, setModal] = useState({
+    show: false,
+    message: "",
+    type: "",
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const formData = new FormData(e.target);
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => {
+        setModal({
+          show: true,
+          message: "Message sent successfully!",
+          type: "success",
+        });
+        e.target.reset();
+      })
+      .catch(() => {
+        setModal({
+          show: true,
+          message: "Something went wrong. Please try again.",
+          type: "error",
+        });
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  };
+
+  const closeModal = () => {
+    setModal({ show: false, message: "", type: "" });
+  };
+
   return (
-    <section id="contact" className="bg-light pt-5 mb-3">
-      <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-lg-8">
-            <div className="text-center mb-5">
-              <h6 className="text-brand-orange text-uppercase fw-bold">
+    <>
+      {/* SUCCESS / ERROR MODAL */}
+      {modal.show && (
+        <div
+          className="modal fade show"
+          style={{ display: "block", background: "rgba(0,0,0,0.5)" }}
+        >
+          <div className="modal-dialog modal-sm modal-dialog-centered">
+            <div className="modal-content rounded-4 border-0 shadow">
+              <div className="modal-body text-center p-4">
+                <div
+                  className={`mb-3 fs-1 ${
+                    modal.type === "success"
+                      ? "text-brand-orange"
+                      : "text-danger"
+                  }`}
+                >
+                  {modal.type === "success" ? "✓" : "⚠"}
+                </div>
+
+                <h5 className="fw-bold mb-2">
+                  {modal.type === "success" ? "Success" : "Error"}
+                </h5>
+
+                <p className="text-muted small">{modal.message}</p>
+
+                <button
+                  onClick={closeModal}
+                  className="btn bg-brand-navy text-white w-100 mt-2"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* CONTACT SECTION */}
+      <section id="contact" className="py-4">
+        <div className="container">
+          <div className="row rounded-4 shadow overflow-hidden">
+            {/* LEFT SIDE */}
+            <div className="col-lg-5 text-white p-5 bg-brand-navy d-flex flex-column justify-content-center">
+              <h6 className="text-brand-orange text-uppercase fw-bold mb-3">
                 - Get In Touch -
               </h6>
-              <div class="alert alert-danger z-1" role="alert">
-                Note: This form is not yet working. Updates still in progress. You Can reach me using other methods
-              </div>
-              <h2 className="text-brand-navy fw-bold">
-                Let's Discuss Your Project
-              </h2>
-              <p className="text-muted">
-                Feel free to reach out via Email, LinkedIn or the form below.
+
+              <h2 className="fw-bold mb-3">Let's Discuss Your Project</h2>
+
+              <p className="opacity-75 mb-4">
+                Feel free to reach out via Email, LinkedIn or the contact form.
               </p>
+
+              <div className="d-flex align-items-center mb-3">
+                <i className="bi bi-envelope-fill text-brand-orange me-3"></i>
+                <span><a href="mongarejoshua@gmail.com" className="">mongarejoshua@gmail.com</a></span>
+              </div>
+
+              <div className="d-flex align-items-center">
+                <i className="bi bi-linkedin text-brand-orange me-3"></i>
+                <span><a href="">LinkedIn</a></span>
+              </div>
             </div>
 
-            <div className="card border-0 shadow p-4 p-md-5 rounded-4">
-              <form>
-                <div className="row g-2">
-                  {[
-                    {
-                      label: "Your Name",
-                      type: "text",
-                      placeholder: "Enter your name",
-                    },
-                    {
-                      label: "Your Email",
-                      type: "email",
-                      placeholder: "example@gmail.com",
-                    },
-                    {
-                      label: "Subject",
-                      type: "text",
-                      placeholder: "Project Inquiry",
-                    },
-                  ].map(({ label, type, placeholder }) => (
-                    <div
-                      className={`col-${type === "text" ? "12" : "6"}`}
-                      key={label}
-                    >
-                      <label className="form-label text-muted small fw-bold">
-                        {label}
-                      </label>
-                      <input
-                        type={type}
-                        className="form-control bg-light border-0 py-3"
-                        placeholder={placeholder}
-                      />
-                    </div>
-                  ))}
+            {/* RIGHT SIDE */}
+            <div className="col-lg-7 bg-white p-5">
+              <form
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                onSubmit={handleSubmit}
+              >
+                <input type="hidden" name="form-name" value="contact" />
+
+                <div className="row g-3">
+                  <div className="col-12">
+                    <label className="small fw-bold text-muted">
+                      Your Name
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      className="form-control bg-light border-0 py-3"
+                      placeholder="Enter your name"
+                      required
+                    />
+                  </div>
+
+                  <div className="col-md-6">
+                    <label className="small fw-bold text-muted">
+                      Your Email
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      className="form-control bg-light border-0 py-3"
+                      placeholder="example@gmail.com"
+                      required
+                    />
+                  </div>
+
+                  <div className="col-md-6">
+                    <label className="small fw-bold text-muted">Subject</label>
+                    <input
+                      type="text"
+                      name="subject"
+                      className="form-control bg-light border-0 py-3"
+                      placeholder="Project Inquiry"
+                    />
+                  </div>
 
                   <div className="col-12">
-                    <label className="form-label text-muted small fw-bold">
-                      Your Comments
-                    </label>
+                    <label className="small fw-bold text-muted">Message</label>
                     <textarea
-                      className="form-control bg-light border-0"
+                      name="message"
                       rows="5"
+                      className="form-control bg-light border-0"
                       placeholder="Tell me about your project..."
+                    
                     ></textarea>
                   </div>
 
-                  <div className="col-12 text-center mt-4">
+                  <div className="col-12">
                     <button
                       type="submit"
-                      className="btn bg-brand-navy text-white w-50 py-3 rounded-4 shadow"
+                      disabled={loading}
+                      className="btn bg-brand-navy text-white w-100 py-3 fw-bold d-flex justify-content-center align-items-center"
                     >
-                      Send Message
+                      {loading && (
+                        <span className="spinner-border spinner-border-sm me-2"></span>
+                      )}
+                      {loading ? "Sending..." : "Send Message"}
                     </button>
                   </div>
                 </div>
@@ -80,7 +185,7 @@ export default function Contact() {
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

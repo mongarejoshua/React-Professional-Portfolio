@@ -7,13 +7,13 @@ export default function About() {
         <div className="row g-0 align-items-center rounded-end-4 overflow-hidden shadow-sm">
           <div className="col-lg-6">
             <img
-              src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=1000"
+              src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1000"
               className="w-100 h-100"
               style={{ minHeight: "528px", objectFit: "cover" }}
               alt="About Image"
             />
           </div>
-          <div className="col-lg-6 bg-brand-navy text-white p-5"> 
+          <div className="col-lg-6 bg-brand-navy text-white p-5">
             <h6 className="text-brand-orange text-uppercase fw-bold mb-3">
               - About Me -
             </h6>
