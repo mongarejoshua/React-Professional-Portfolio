@@ -28,23 +28,23 @@ export default function Hero() {
     <section id="home" className="hero-section d-flex align-items-center pt-5">
       <div className="container">
         <div className="row align-items-center gy-5">
-          
           {/* Text content */}
           <div className="col-lg-6 text-center text-lg-start">
             <h6 className="text-brand-orange text-uppercase fw-bold">
-              - Electrical & Telecommunication Engineer -
+              - Electrical & Telecommunication Engineering Student -
             </h6>
 
             <h1 className="display-5 fw-bold text-light mb-3">
-              Designing reliable
+              Building practical skills in
               <span className="text-brand-primary"> power</span> &<br />
               communication systems
             </h1>
 
             <p className="text-light opacity-75 mb-4">
-              I specialize in electrical installations, structured cabling,
-              networking, and modern engineering solutions — combining field
-              expertise with clean digital execution.
+              I’m currently developing hands-on experience in electrical design
+              installations and networking — combining
+              classroom knowledge with real-world problem solving and modern
+              engineering tools.
             </p>
 
             <div className="d-flex gap-3 justify-content-center justify-content-lg-start">
@@ -86,7 +86,7 @@ export default function Hero() {
               style={{
                 background: "var(--brand-secondary)",
                 color: "var(--brand-light)",
-                border: "1px solid var(--brand-primary)"
+                border: "1px solid var(--brand-primary)",
               }}
             >
               <div
@@ -113,7 +113,7 @@ export default function Hero() {
                   className="btn"
                   style={{
                     color: "var(--brand-light)",
-                    border: "1px solid var(--brand-light)"
+                    border: "1px solid var(--brand-light)",
                   }}
                   onClick={() => setShowModal(false)}
                 >
@@ -124,7 +124,7 @@ export default function Hero() {
                   className="btn"
                   style={{
                     background: "var(--brand-primary)",
-                    color: "white"
+                    color: "white",
                   }}
                   onClick={openFile}
                 >

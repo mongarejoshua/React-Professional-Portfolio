@@ -5,7 +5,6 @@ import Hero from "./components/Hero";
 import Overlap from "./components/Overlap";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
-import Reviews from "./components/Reviews";
 import About from "./components/About";
 import Blog from "./components/Blog";
 import Contact from "./components/Contact";
@@ -20,7 +19,6 @@ function App() {
       <Overlap />
       <Projects />
       <Skills />
-      <Reviews />
       <About />
       <Blog />
       <Contact />

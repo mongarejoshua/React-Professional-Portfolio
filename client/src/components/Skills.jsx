@@ -2,9 +2,9 @@ import "../css/Skills.css"
 
 const skills = [
   { icon: "bi-motherboard", name: "KiCad & TinkerCAD", percent: 75 },
-  { icon: "bi-code-square", name: "Python & C++", percent: 60 },
+  { icon: "bi-code-square", name: "Python & C++", percent: 40 },
   { icon: "bi-building", name: "AutoCAD", percent: 70 },
-  { icon: "bi bi-filetype-jsx", name: "React", percent: 45 },
+  { icon: "bi-graph-up", name: "MATLAB", percent: 15 },
   { icon: "bi bi-microsoft", name: "Windows Installation", percent: 85 },
 ];
 

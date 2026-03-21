@@ -2,7 +2,7 @@
 
 Good for learning basic electronics and Arduino outputs.
 
-Single LED blink
+Single LED blink 
 
 Alternate blinking LEDs
 
