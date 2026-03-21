@@ -84,15 +84,15 @@ export default function Contact() {
               <div className="d-flex align-items-center mb-3">
                 <i className="bi bi-envelope-fill text-brand-orange me-3"></i>
                 <span>
-                  <a href="mailto:mongarejoshua@gmail.com">
+                  <a href="mailto:mongarejoshua@gmail.com" className="text-decoration-none">
                     mongarejoshua@gmail.com
                   </a>
                 </span>
               </div>
               <div className="d-flex align-items-center">
-                <i className="bi bi-linkedin text-brand-orange me-3"></i>
+                <i className="bi bi-linkedin text-brand-orange me-3"></i>   
                 <span>
-                  <a href="#">LinkedIn</a>
+                  <a href="https://www.linkedin.com/feed/" className="text-decoration-none" target="_blank">LinkedIn</a>
                 </span>
               </div>
             </div>

@@ -21,14 +21,15 @@ export default function About() {
               Bridging Engineering & Digital Application
             </h3>
             <p className="text-white-50 mb-4">
-              I'm a dynamic student, building a solid foundation as a Bachelor's
+              I’m a dynamic student, building a solid foundation as a Bachelor's
               degree candidate in Electrical and Telecommunication Engineering
-              at Multimedia University Of Kenya.
+              at Multimedia University of Kenya.
             </p>
             <p className="text-white-50 mb-4">
-              Fueling my passion for technology, I also do part-time frontend
-              web development, translating ideas into compelling, responsive,
-              and functional user interfaces.
+              Driven by a passion for reliable power and communication systems,
+              I focus on mastering electrical installations, structured cabling,
+              and networking solutions — combining theoretical knowledge with
+              hands-on engineering practice.
             </p>
 
             <div className="d-flex align-items-center gap-4 mt-4">
@@ -38,7 +39,7 @@ export default function About() {
               </div>
               <div className="vr bg-secondary" style={{ height: "50px" }}></div>
               <div>
-                <h2 className="text-brand-orange fw-bold display-5">100%</h2>
+                <h2 className="text-brand-orange fw-bold display-5">97%</h2>
                 <span className="small text-white-50">Dedication</span>
               </div>
             </div>
