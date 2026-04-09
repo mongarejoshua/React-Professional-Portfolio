@@ -1,12 +1,10 @@
-import "./css/App.css";
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import Overlap from "./components/Overlap";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import About from "./components/About";
-import Blog from "./components/Blog";
+import Blog from "./components/Certs";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
@@ -16,7 +14,6 @@ function App() {
     <>
       <Navbar />
       <Hero />
-      <Overlap />
       <Projects />
       <Skills />
       <About />

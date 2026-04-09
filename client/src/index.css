@@ -1,37 +1,30 @@
 /* Alan Sans */
-@font-face {
-  font-family: 'Alan Sans';
-  src: url('../assets/fonts/Alan_Sans/static/AlanSans-SemiBold.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
+@import url('https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&display=swap');
+
 * {
-  font-family: "Alan Sans";
+  font-family: "Alan Sans", sans-serif;
+  font-weight: 500;
 }
 :root {
   --brand-primary: #FF6B35; /* Vivid Orange */
   --brand-secondary: #0B1B32; /* Navy Blue */
   --brand-light: #F8F9FA;
 }
-
 .text-brand-orange {
   color: var(--brand-primary) !important;
 }
-
 .text-brand-navy {
   color: var(--brand-secondary) !important;
 }
-
 .bg-brand-navy {
   background-color: var(--brand-secondary) !important;
   color: white;
 }
-
 .bg-brand-orange {
   background-color: var(--brand-primary) !important;
   color: white;
 }
+
 
 /* Custom Buttons */
 .btn-brand {
