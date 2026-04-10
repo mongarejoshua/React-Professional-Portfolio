@@ -67,15 +67,25 @@ export default function About() {
   return (
     <section
       id="about"
-      className="bg-white py-5"
-      style={{ fontFamily: "'DM Sans', sans-serif" }}
+      style={{
+        background: "var(--brand-secondary)",
+        padding: "5rem 0",
+        position: "relative",
+        overflow: "hidden",
+      }}
     >
-      <div className="container">
+      {/* Decorative rings */}
+      <style>{`
+        #about::before { content:''; position:absolute; top:-130px; right:-110px; width:420px; height:420px; border-radius:50%; border:70px solid rgba(255,107,53,0.05); pointer-events:none; }
+        #about::after  { content:''; position:absolute; bottom:-80px; left:-60px; width:280px; height:280px; border-radius:50%; border:50px solid rgba(255,107,53,0.04); pointer-events:none; }
+      `}</style>
+
+      <div className="container" style={{ position: "relative", zIndex: 1 }}>
         <div
           className="row g-0 align-items-stretch rounded-4 overflow-hidden"
-          style={{ border: "1px solid #e5e7eb" }}
+          style={{ border: "1px solid rgba(255,255,255,0.08)" }}
         >
-          {/* Image Column */}
+          {/* ── Image Column ── */}
           <div
             className="col-lg-5"
             style={{ position: "relative", minHeight: "560px" }}
@@ -90,12 +100,24 @@ export default function About() {
                 display: "block",
               }}
             />
+            {/* Dark overlay so image blends with navy bg */}
+            <div
+              style={{
+                position: "absolute",
+                inset: 0,
+                background: "rgba(11,27,50,0.25)",
+                pointerEvents: "none",
+              }}
+            />
           </div>
 
-          {/* Content Column */}
+          {/* ── Content Column ── */}
           <div
             className="col-lg-7 p-5"
-            style={{ background: "var(--brand-secondary)" }}
+            style={{
+              background: "rgba(255,255,255,0.03)",
+              borderLeft: "1px solid rgba(255,255,255,0.08)",
+            }}
           >
             {/* Eyebrow */}
             <p
@@ -135,13 +157,14 @@ export default function About() {
               }}
             >
               Bridging Engineering
-              <br />&{" "}
+              <br />
+              &amp;{" "}
               <span style={{ color: "var(--brand-primary)" }}>
                 Digital Application
               </span>
             </h2>
 
-            {/* Body Text */}
+            {/* Body */}
             <p
               style={{
                 fontSize: "0.92rem",
@@ -176,10 +199,14 @@ export default function About() {
                       display: "flex",
                       alignItems: "flex-start",
                       gap: "12px",
-                      background: "rgba(248,249,250,0.05)",
+                      background: "rgba(255,255,255,0.04)",
                       borderRadius: "12px",
                       padding: "0.9rem 1rem",
                       borderLeft: "3px solid var(--brand-primary)",
+                      border: "1px solid rgba(255,255,255,0.07)",
+                      borderLeftWidth: "3px",
+                      borderLeftColor: "var(--brand-primary)",
+                      borderLeftStyle: "solid",
                     }}
                   >
                     <div
@@ -210,7 +237,7 @@ export default function About() {
                       </div>
                       <div
                         style={{
-                         
+                          fontFamily: "'Syne', sans-serif",
                           fontSize: "0.95rem",
                           fontWeight: 700,
                           color: "var(--brand-light)",
@@ -275,6 +302,7 @@ export default function About() {
                   background: "var(--brand-primary)",
                   color: "#fff",
                   border: "none",
+                  fontFamily: "'DM Sans', sans-serif",
                   fontWeight: 500,
                   fontSize: "0.9rem",
                   padding: "0.75rem 2rem",
@@ -290,6 +318,7 @@ export default function About() {
                   background: "transparent",
                   color: "var(--brand-light)",
                   border: "1.5px solid rgba(248,249,250,0.2)",
+                  fontFamily: "'DM Sans', sans-serif",
                   fontWeight: 500,
                   fontSize: "0.9rem",
                   padding: "0.75rem 2rem",

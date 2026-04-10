@@ -134,7 +134,6 @@ export default function Skills() {
       ref={sectionRef}
       style={{
         background: "var(--brand-secondary)",
-        fontFamily: "'DM Sans', sans-serif",
         position: "relative",
         overflow: "hidden",
       }}
@@ -164,7 +163,7 @@ export default function Skills() {
             <div
               className="col-lg-4"
               style={{
-                padding: "5rem 3rem 5rem 4rem",
+                padding: "3rem 3rem 3rem 3rem",
                 display: "flex",
                 flexDirection: "column",
               }}

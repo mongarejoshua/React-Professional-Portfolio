@@ -59,12 +59,12 @@ function Pagination({ align, currentPage, totalPages, setCurrentPage }) {
 
 const pageLinkStyle = {
   borderRadius: "8px",
-  border: "1px solid #e5e7eb",
-  color: "var(--brand-secondary)",
+  border: "1px solid rgba(255,255,255,0.12)",
+  color: "var(--brand-light)",
+  background: "rgba(255,255,255,0.05)",
   fontSize: "0.85rem",
   fontWeight: 500,
   padding: "0.4rem 0.85rem",
-  fontFamily: "'DM Sans', sans-serif",
   transition: "all 0.2s",
 };
 
@@ -75,14 +75,17 @@ function ProjectCard({ project, onView }) {
   return (
     <div
       style={{
-        background: "#fff",
+        background: hovered
+          ? "rgba(255,107,53,0.05)"
+          : "rgba(255,255,255,0.04)",
         border: hovered
-          ? "1px solid rgba(255,107,53,0.35)"
-          : "1px solid #e5e7eb",
+          ? "1px solid rgba(255,107,53,0.4)"
+          : "1px solid rgba(255,255,255,0.1)",
         borderRadius: "16px",
         overflow: "hidden",
         transform: hovered ? "translateY(-6px)" : "translateY(0)",
-        transition: "transform 0.3s ease, border-color 0.3s ease",
+        transition:
+          "transform 0.3s ease, border-color 0.3s ease, background 0.3s ease",
         height: "100%",
         display: "flex",
         flexDirection: "column",
@@ -139,9 +142,9 @@ function ProjectCard({ project, onView }) {
             textTransform: "uppercase",
             padding: "3px 12px",
             borderRadius: "20px",
-            background: "rgba(255,107,53,0.12)",
+            background: "rgba(255,107,53,0.15)",
             color: "var(--brand-primary)",
-            border: "1px solid rgba(255,107,53,0.25)",
+            border: "1px solid rgba(255,107,53,0.3)",
             alignSelf: "flex-start",
           }}
         >
@@ -150,10 +153,10 @@ function ProjectCard({ project, onView }) {
 
         <p
           style={{
-            fontFamily: "'Syne', sans-serif",
+         
             fontSize: "1rem",
             fontWeight: 700,
-            color: "var(--brand-secondary)",
+            color: "var(--brand-light)",
             lineHeight: 1.3,
             margin: 0,
           }}
@@ -168,7 +171,7 @@ function ProjectCard({ project, onView }) {
         <p
           style={{
             fontSize: "0.83rem",
-            color: "#6b7280",
+            color: "rgba(248,249,250,0.5)",
             lineHeight: 1.7,
             margin: 0,
             flex: 1,
@@ -184,26 +187,28 @@ function ProjectCard({ project, onView }) {
             alignItems: "center",
             justifyContent: "center",
             gap: "8px",
-            background: "var(--brand-secondary)",
-            color: "#fff",
-            border: "none",
+            background: "rgba(255,255,255,0.08)",
+            color: "var(--brand-light)",
+            border: "1px solid rgba(255,255,255,0.12)",
             borderRadius: "8px",
             padding: "0.6rem 1.25rem",
-            fontFamily: "'DM Sans', sans-serif",
+        
             fontSize: "0.85rem",
             fontWeight: 500,
             cursor: "pointer",
             width: "100%",
-            transition: "background 0.2s",
+            transition: "background 0.2s, border-color 0.2s",
           }}
-          onMouseEnter={(e) =>
-            (e.currentTarget.style.background = "var(--brand-primary)")
-          }
-          onMouseLeave={(e) =>
-            (e.currentTarget.style.background = "var(--brand-secondary)")
-          }
+          onMouseEnter={(e) => {
+            e.currentTarget.style.background = "var(--brand-primary)";
+            e.currentTarget.style.borderColor = "var(--brand-primary)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.background = "rgba(255,255,255,0.08)";
+            e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)";
+          }}
         >
-          <svg viewBox="0 0 24 24" width="15" height="15" fill="#fff">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor">
             <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
           </svg>
           View Project
@@ -218,18 +223,15 @@ function ProjectModal({ project, onClose }) {
   if (!project) return null;
   return (
     <>
-      {/* Backdrop */}
       <div
         style={{
           position: "fixed",
           inset: 0,
-          background: "rgba(11,27,50,0.7)",
+          background: "rgba(0,0,0,0.75)",
           zIndex: 1050,
         }}
         onClick={onClose}
       />
-
-      {/* Modal */}
       <div
         style={{
           position: "fixed",
@@ -244,7 +246,8 @@ function ProjectModal({ project, onClose }) {
       >
         <div
           style={{
-            background: "#fff",
+            background: "#0f2440",
+            border: "1px solid rgba(255,255,255,0.1)",
             borderRadius: "20px",
             width: "100%",
             maxWidth: "720px",
@@ -260,19 +263,19 @@ function ProjectModal({ project, onClose }) {
               alignItems: "center",
               justifyContent: "space-between",
               padding: "1.5rem 1.75rem 1rem",
-              borderBottom: "1px solid #f0f0f0",
+              borderBottom: "1px solid rgba(255,255,255,0.08)",
               position: "sticky",
               top: 0,
-              background: "#fff",
+              background: "#0f2440",
               zIndex: 2,
             }}
           >
             <h5
               style={{
-                fontFamily: "'Syne', sans-serif",
+              
                 fontSize: "1.2rem",
                 fontWeight: 800,
-                color: "var(--brand-secondary)",
+                color: "var(--brand-light)",
                 margin: 0,
               }}
             >
@@ -284,8 +287,8 @@ function ProjectModal({ project, onClose }) {
                 width: "32px",
                 height: "32px",
                 borderRadius: "8px",
-                border: "1px solid #e5e7eb",
-                background: "#fff",
+                border: "1px solid rgba(255,255,255,0.15)",
+                background: "rgba(255,255,255,0.06)",
                 cursor: "pointer",
                 display: "flex",
                 alignItems: "center",
@@ -293,14 +296,19 @@ function ProjectModal({ project, onClose }) {
                 flexShrink: 0,
               }}
             >
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="#6b7280">
+              <svg
+                viewBox="0 0 24 24"
+                width="16"
+                height="16"
+                fill="rgba(248,249,250,0.6)"
+              >
                 <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
               </svg>
             </button>
           </div>
 
           {/* Body */}
-          <div style={{ padding: "1.25rem 1.75rem 1.75rem" }}>
+          <div >
             <div className="row g-3 mb-4">
               {project.modal.images.map((img, i) => (
                 <div className="col-md-6" key={i}>
@@ -308,7 +316,11 @@ function ProjectModal({ project, onClose }) {
                     src={img}
                     className="img-fluid"
                     alt=""
-                    style={{ borderRadius: "10px", width: "100%" }}
+                    style={{
+                      borderRadius: "10px",
+                      width: "100%",
+                      border: "1px solid rgba(255,255,255,0.08)",
+                    }}
                   />
                 </div>
               ))}
@@ -323,9 +335,9 @@ function ProjectModal({ project, onClose }) {
                     alignItems: "flex-start",
                     gap: "10px",
                     padding: "0.6rem 0",
-                    borderBottom: "1px solid #f9f9f9",
+                    borderBottom: "1px solid rgba(255,255,255,0.06)",
                     fontSize: "0.88rem",
-                    color: "#4b5563",
+                    color: "rgba(248,249,250,0.6)",
                     lineHeight: 1.65,
                   }}
                 >
@@ -374,12 +386,19 @@ export default function Projects() {
       id="projects"
       ref={sectionRef}
       style={{
-        background: "var(--brand-light)",
-        padding: "5rem 0",
-        fontFamily: "'DM Sans', sans-serif",
+        background: "var(--brand-secondary)",
+        padding: "0.5rem 0",
+        position: "relative",
+        overflow: "hidden",
       }}
     >
-      <div className="container">
+      <style>{`
+        @keyframes wip-pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.7)} }
+        #projects::before { content:''; position:absolute; top:-120px; right:-100px; width:380px; height:380px; border-radius:50%; border:65px solid rgba(255,107,53,0.05); pointer-events:none; }
+        #projects::after  { content:''; position:absolute; bottom:-80px; left:-60px; width:260px; height:260px; border-radius:50%; border:45px solid rgba(255,107,53,0.04); pointer-events:none; }
+      `}</style>
+
+      <div className="container" style={{ position: "relative", zIndex: 1 }}>
         {/* Header */}
         <div className="text-center mb-5">
           <p
@@ -416,10 +435,9 @@ export default function Projects() {
 
           <h2
             style={{
-              fontFamily: "'Syne', sans-serif",
               fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)",
               fontWeight: 800,
-              color: "var(--brand-secondary)",
+              color: "var(--brand-light)",
               lineHeight: 1.15,
               marginBottom: "0.5rem",
             }}
@@ -430,7 +448,7 @@ export default function Projects() {
 
           <p
             style={{
-              color: "#6b7280",
+              color: "rgba(248,249,250,0.5)",
               fontSize: "0.92rem",
               maxWidth: "520px",
               margin: "0.5rem auto 1.25rem",
@@ -468,9 +486,6 @@ export default function Projects() {
             This section is still in progress — actively building &amp; updating
           </div>
         </div>
-
-        {/* Pulse keyframe — injected via a style tag */}
-        <style>{`@keyframes wip-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}`}</style>
 
         {/* Top pagination */}
         <Pagination

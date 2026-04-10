@@ -127,7 +127,7 @@ const featured = {
 const stats = [
   { num: "4+", label: "Certificates" },
   { num: "400+", label: "Learning Hours" },
-  { num: "2022–", label: "Active Since" },
+  { num: "2022", label: "Active Since" },
 ];
 
 const styles = {
@@ -352,7 +352,6 @@ function CertCard({ cert }) {
       <p style={styles.issuerText}>{cert.issuer}</p>
       <p
         style={{
-          fontFamily: "'Syne', sans-serif",
           fontSize: "1.05rem",
           fontWeight: 700,
           color: "var(--brand-light)",

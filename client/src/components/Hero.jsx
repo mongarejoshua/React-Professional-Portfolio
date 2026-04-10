@@ -143,6 +143,14 @@ export default function Hero() {
                 />
                 Electrical &amp; Telecom Engineering Student
               </p>
+              <span
+                style={{
+                  display: "inline-block",
+                  width: "24px",
+                  height: "2px",
+                  background: "var(--brand-primary)",
+                }}
+              />
 
               {/* Heading */}
               <h1
@@ -198,7 +206,7 @@ export default function Hero() {
 
             {/* ── Image ── */}
             <div
-              className="col-lg-6 text-center"
+              className="col-lg-6 text-center mt-5"
               style={{ animation: "fadeIn .8s ease .3s both" }}
             >
               <div

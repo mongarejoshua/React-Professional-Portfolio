@@ -80,7 +80,7 @@ const FieldLabel = ({ children }) => (
       fontWeight: 600,
       letterSpacing: "0.06em",
       textTransform: "uppercase",
-      color: "#9ca3af",
+      color: "rgba(248,249,250,0.4)",
       marginBottom: "0.45rem",
       display: "block",
     }}
@@ -89,16 +89,16 @@ const FieldLabel = ({ children }) => (
   </label>
 );
 
-/* ── Input style ── */
+/* ── Input style — dark themed ── */
 const inputStyle = {
   width: "100%",
-  background: "#F8F9FA",
-  border: "1px solid #e5e7eb",
+  background: "rgba(255,255,255,0.05)",
+  border: "1px solid rgba(255,255,255,0.1)",
   borderRadius: "10px",
   padding: "0.75rem 1rem",
   fontFamily: "'DM Sans', sans-serif",
   fontSize: "0.9rem",
-  color: "var(--brand-secondary)",
+  color: "var(--brand-light)",
   outline: "none",
   transition: "border-color 0.2s, background 0.2s",
   appearance: "none",
@@ -112,9 +112,7 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-
     const formData = new FormData(e.target);
-
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -139,34 +137,23 @@ export default function Contact() {
   };
 
   const closeModal = () => setModal({ show: false, message: "", type: "" });
-
   const isSuccess = modal.type === "success";
 
   return (
     <>
       <style>{`
-        @keyframes fadeUp    { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
-        @keyframes modalPop  { from{opacity:0;transform:scale(.92)} to{opacity:1;transform:scale(1)} }
-        @keyframes availPulse{ 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.7)} }
+        @keyframes fadeUp     { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+        @keyframes modalPop   { from{opacity:0;transform:scale(.92)} to{opacity:1;transform:scale(1)} }
+        @keyframes availPulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.7)} }
+        @keyframes spin       { to{transform:rotate(360deg)} }
 
-        .contact-info-ring::before {
-          content:''; position:absolute; top:-100px; right:-100px;
-          width:300px; height:300px; border-radius:50%;
-          border:50px solid rgba(255,107,53,0.06); pointer-events:none;
-        }
-        .contact-info-ring::after {
-          content:''; position:absolute; bottom:-60px; left:-50px;
-          width:200px; height:200px; border-radius:50%;
-          border:35px solid rgba(255,107,53,0.04); pointer-events:none;
-        }
+        #contact::before { content:''; position:absolute; top:-120px; right:-100px; width:380px; height:380px; border-radius:50%; border:65px solid rgba(255,107,53,0.05); pointer-events:none; }
+        #contact::after  { content:''; position:absolute; bottom:-80px; left:-60px; width:260px; height:260px; border-radius:50%; border:45px solid rgba(255,107,53,0.04); pointer-events:none; }
 
-        .contact-field:focus {
-          border-color: var(--brand-primary) !important;
-          background: #fff !important;
-        }
+        .contact-field::placeholder { color: rgba(248,249,250,0.25) !important; }
+        .contact-field:focus { border-color: var(--brand-primary) !important; background: rgba(255,255,255,0.08) !important; }
         .contact-submit:hover { background: var(--brand-primary) !important; transform: translateY(-2px); }
-
-        .contact-avail-dot { animation: availPulse 1.5s ease-in-out infinite; }
+        .contact-avail-dot    { animation: availPulse 1.5s ease-in-out infinite; }
       `}</style>
 
       {/* ── Success / Error modal ── */}
@@ -175,7 +162,7 @@ export default function Contact() {
           style={{
             position: "fixed",
             inset: 0,
-            background: "rgba(0,0,0,0.6)",
+            background: "rgba(0,0,0,0.75)",
             zIndex: 1050,
             display: "flex",
             alignItems: "center",
@@ -185,25 +172,24 @@ export default function Contact() {
         >
           <div
             style={{
-              background: "#fff",
+              background: "#0f2440",
+              border: `1px solid ${isSuccess ? "rgba(46,204,113,0.3)" : "rgba(231,76,60,0.3)"}`,
               borderRadius: "20px",
               width: "100%",
               maxWidth: "340px",
               padding: "2rem",
               textAlign: "center",
               animation: "modalPop .3s ease both",
-              border: `1px solid ${isSuccess ? "rgba(46,204,113,0.3)" : "rgba(231,76,60,0.3)"}`,
             }}
           >
-            {/* Icon */}
             <div
               style={{
                 width: "56px",
                 height: "56px",
                 borderRadius: "50%",
                 background: isSuccess
-                  ? "rgba(46,204,113,0.1)"
-                  : "rgba(231,76,60,0.1)",
+                  ? "rgba(46,204,113,0.12)"
+                  : "rgba(231,76,60,0.12)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -223,13 +209,12 @@ export default function Contact() {
                 )}
               </svg>
             </div>
-
             <h5
               style={{
                 fontFamily: "'Syne', sans-serif",
                 fontWeight: 800,
                 fontSize: "1.1rem",
-                color: "var(--brand-secondary)",
+                color: "var(--brand-light)",
                 marginBottom: "0.4rem",
               }}
             >
@@ -238,7 +223,7 @@ export default function Contact() {
             <p
               style={{
                 fontSize: "0.85rem",
-                color: "#6b7280",
+                color: "rgba(248,249,250,0.5)",
                 lineHeight: 1.6,
                 marginBottom: "1.25rem",
               }}
@@ -249,7 +234,7 @@ export default function Contact() {
               onClick={closeModal}
               style={{
                 width: "100%",
-                background: "var(--brand-secondary)",
+                background: "var(--brand-primary)",
                 color: "#fff",
                 border: "none",
                 borderRadius: "10px",
@@ -270,12 +255,14 @@ export default function Contact() {
       <section
         id="contact"
         style={{
-          background: "var(--brand-light)",
+          background: "var(--brand-secondary)",
           padding: "5rem 0",
           fontFamily: "'DM Sans', sans-serif",
+          position: "relative",
+          overflow: "hidden",
         }}
       >
-        <div className="container">
+        <div className="container" style={{ position: "relative", zIndex: 1 }}>
           {/* Section header */}
           <div
             className="text-center mb-5"
@@ -317,7 +304,7 @@ export default function Contact() {
                 fontFamily: "'Syne', sans-serif",
                 fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)",
                 fontWeight: 800,
-                color: "var(--brand-secondary)",
+                color: "var(--brand-light)",
                 lineHeight: 1.15,
                 marginBottom: "0.5rem",
               }}
@@ -327,7 +314,7 @@ export default function Contact() {
             </h2>
             <p
               style={{
-                color: "#6b7280",
+                color: "rgba(248,249,250,0.5)",
                 fontSize: "0.92rem",
                 maxWidth: "460px",
                 margin: "0 auto",
@@ -338,12 +325,12 @@ export default function Contact() {
             </p>
           </div>
 
-          {/* Card */}
+          {/* Card wrapper */}
           <div
             style={{
               borderRadius: "24px",
               overflow: "hidden",
-              border: "1px solid #e5e7eb",
+              border: "1px solid rgba(255,255,255,0.08)",
               display: "flex",
               flexWrap: "wrap",
               animation: "fadeUp .6s ease .22s both",
@@ -351,9 +338,9 @@ export default function Contact() {
           >
             {/* ── Left panel ── */}
             <div
-              className="contact-info-ring"
               style={{
-                background: "var(--brand-secondary)",
+                background: "rgba(255,255,255,0.04)",
+                borderRight: "1px solid rgba(255,255,255,0.08)",
                 padding: "3.5rem 3rem",
                 flex: "1 1 320px",
                 position: "relative",
@@ -362,6 +349,32 @@ export default function Contact() {
                 flexDirection: "column",
               }}
             >
+              {/* Mini decorative rings inside the panel */}
+              <div
+                style={{
+                  position: "absolute",
+                  top: "-80px",
+                  right: "-80px",
+                  width: "240px",
+                  height: "240px",
+                  borderRadius: "50%",
+                  border: "40px solid rgba(255,107,53,0.05)",
+                  pointerEvents: "none",
+                }}
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: "-50px",
+                  left: "-40px",
+                  width: "160px",
+                  height: "160px",
+                  borderRadius: "50%",
+                  border: "30px solid rgba(255,107,53,0.04)",
+                  pointerEvents: "none",
+                }}
+              />
+
               <p
                 style={{
                   fontSize: "11px",
@@ -437,7 +450,6 @@ export default function Contact() {
                 />
               </div>
 
-              {/* Availability badge */}
               <div
                 style={{
                   display: "inline-flex",
@@ -473,10 +485,9 @@ export default function Contact() {
             {/* ── Right panel: form ── */}
             <div
               style={{
-                background: "#fff",
+                background: "rgba(255,255,255,0.02)",
                 padding: "3.5rem 3rem",
                 flex: "1 1 380px",
-                borderLeft: "1px solid #e5e7eb",
               }}
             >
               <form
@@ -505,7 +516,6 @@ export default function Contact() {
                       style={inputStyle}
                     />
                   </div>
-
                   <div className="col-md-6">
                     <FieldLabel>Email Address</FieldLabel>
                     <input
@@ -517,7 +527,6 @@ export default function Contact() {
                       style={inputStyle}
                     />
                   </div>
-
                   <div className="col-md-6">
                     <FieldLabel>Subject</FieldLabel>
                     <input
@@ -528,7 +537,6 @@ export default function Contact() {
                       style={inputStyle}
                     />
                   </div>
-
                   <div className="col-12">
                     <FieldLabel>Message</FieldLabel>
                     <textarea
@@ -540,7 +548,6 @@ export default function Contact() {
                       style={{ ...inputStyle, resize: "vertical" }}
                     />
                   </div>
-
                   <div className="col-12">
                     <button
                       type="submit"
@@ -548,7 +555,7 @@ export default function Contact() {
                       className="contact-submit"
                       style={{
                         width: "100%",
-                        background: "var(--brand-secondary)",
+                        background: "var(--brand-primary)",
                         color: "#fff",
                         border: "none",
                         borderRadius: "10px",
@@ -594,7 +601,6 @@ export default function Contact() {
                         </>
                       )}
                     </button>
-                    <style>{`@keyframes spin{to{transform:rotate(360deg)}}`}</style>
                   </div>
                 </div>
               </form>
