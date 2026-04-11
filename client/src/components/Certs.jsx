@@ -111,18 +111,6 @@ const certificates = [
   },
 ];
 
-const featured = {
-  issuer: "Cisco Networking Academy",
-  name: "Networking Basics",
-  desc: "Comprehensive training in network architecture using Cisco Packet Tracer. Skilled in designing scalable network topologies, configuring virtualized routers and switches, and troubleshooting connectivity protocols to ensure robust system communication.",
-  date: "comming soon",
-  skills: [
-    "Physical & Data Link (Layers 1-2):",
-    "Network (Layer 3):",
-    "Transport (Layer 4):",
-    "Session, Presentation, & Application (Layers 5-7):",
-  ],
-};
 
 const stats = [
   { num: "4+", label: "Certificates" },
@@ -422,50 +410,6 @@ export default function CertificatesSection() {
             </div>
           </div>
 
-          {/* Featured Card */}
-          <div className="row mb-4">
-            <div className="col-12">
-              <div style={styles.featuredCard}>
-                <span style={styles.featuredRibbon}>FEATURED</span>
-                <div style={styles.featuredIconWrap}>
-                  <svg
-                    viewBox="0 0 24 24"
-                    width="30"
-                    height="30"
-                    fill="var(--brand-primary)"
-                  >
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                  </svg>
-                </div>
-                <div>
-                  <p style={styles.issuerText}>{featured.issuer}</p>
-                  <p style={styles.featuredTitle}>{featured.name}</p>
-                  <p style={styles.featuredSub}>{featured.desc}</p>
-                  <div>
-                    {featured.skills.map((s) => (
-                      <span key={s} style={styles.skillPill}>
-                        {s}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="d-flex align-items-center gap-3 mt-3">
-                    <span style={styles.badgeVerified}>✓ Verified</span>
-                    <span style={styles.metaText}>
-                      <svg
-                        viewBox="0 0 24 24"
-                        width="13"
-                        height="13"
-                        fill="rgba(248,249,250,0.3)"
-                      >
-                        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z" />
-                      </svg>
-                      {featured.date}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
           {/* Certificate Grid */}
           <div className="row g-3">

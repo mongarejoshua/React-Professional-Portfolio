@@ -58,18 +58,12 @@ export default function About() {
     },
   ];
 
-  const stats = [
-    { num: "3+", label: "Yrs Study" },
-    { num: "12+", label: "Certs" },
-    { num: "97%", label: "Dedication" },
-  ];
-
   return (
     <section
       id="about"
       style={{
         background: "var(--brand-secondary)",
-        padding: "5rem 0",
+        padding: "1rem 0",
         position: "relative",
         overflow: "hidden",
       }}
@@ -252,83 +246,9 @@ export default function About() {
             </div>
 
             {/* Stats Row */}
-            <div
-              className="d-flex align-items-center gap-4 mb-5"
-              style={{ flexWrap: "wrap" }}
-            >
-              {stats.map((s, i) => (
-                <div key={s.label} className="d-flex align-items-center gap-4">
-                  {i !== 0 && (
-                    <div
-                      style={{
-                        width: "1px",
-                        height: "40px",
-                        background: "rgba(248,249,250,0.1)",
-                      }}
-                    />
-                  )}
-                  <div style={{ textAlign: "center" }}>
-                    <div
-                      style={{
-                        fontFamily: "'Syne', sans-serif",
-                        fontSize: "2.2rem",
-                        fontWeight: 800,
-                        color: "var(--brand-primary)",
-                        lineHeight: 1,
-                      }}
-                    >
-                      {s.num}
-                    </div>
-                    <div
-                      style={{
-                        fontSize: "0.75rem",
-                        color: "rgba(248,249,250,0.4)",
-                        textTransform: "uppercase",
-                        letterSpacing: "0.1em",
-                        marginTop: "4px",
-                      }}
-                    >
-                      {s.label}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+            
 
-            {/* CTA Buttons */}
-            <div className="d-flex flex-wrap gap-3">
-              <button
-                style={{
-                  background: "var(--brand-primary)",
-                  color: "#fff",
-                  border: "none",
-                  fontFamily: "'DM Sans', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "0.9rem",
-                  padding: "0.75rem 2rem",
-                  borderRadius: "50px",
-                  cursor: "pointer",
-                  letterSpacing: "0.03em",
-                }}
-              >
-                Download CV
-              </button>
-              <button
-                style={{
-                  background: "transparent",
-                  color: "var(--brand-light)",
-                  border: "1.5px solid rgba(248,249,250,0.2)",
-                  fontFamily: "'DM Sans', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "0.9rem",
-                  padding: "0.75rem 2rem",
-                  borderRadius: "50px",
-                  cursor: "pointer",
-                }}
-              >
-                Get In Touch
-              </button>
-            </div>
+           
           </div>
         </div>
       </div>

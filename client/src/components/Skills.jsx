@@ -223,8 +223,8 @@ export default function Skills() {
               {/* Stats */}
               <div style={{ display: "flex", gap: "2rem" }}>
                 {[
-                  { num: "5+", lbl: "Tools" },
-                  { num: "2+", lbl: "Languages" },
+                  { num: "4+", lbl: "Tools" },
+                
                   { num: "3yr", lbl: "Practice" },
                 ].map(({ num, lbl }) => (
                   <div
